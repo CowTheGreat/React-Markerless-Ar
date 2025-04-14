@@ -5,7 +5,8 @@ import AnimationViewer from "./AnimationViewer";
 function App() {
   return (
     <>
-      {/* <AnimationViewer modelPath="12_animated_butterflies.glb" /> */}
+      <AnimationViewer modelPath="12_animated_butterflies.glb" />
+      <AnimationViewer modelPath="12_animated_butterflies.glb" />
       <ModelViewer modelPath="cat_dispenser.glb" />
       <ModelViewer modelPath="cat_dispenser.glb" />
       <ModelViewer modelPath="cat_dispenser.glb" />

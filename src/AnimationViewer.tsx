@@ -27,7 +27,8 @@ function CameraBackground({ planeSize = 20 }) {
       setVideoTexture(texture);
     });
     return () => {
-      video.srcObject?.getTracks().forEach((track: any) => track.stop());
+      const stream = video.srcObject as MediaStream | null;
+      stream?.getTracks().forEach((track) => track.stop());
     };
   }, []);
 
