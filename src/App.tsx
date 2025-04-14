@@ -1,10 +1,6 @@
 import "./App.css";
-// import ModelViewer from "./ModelViewer";
-// import AnimationViewer from "./AnimationViewer";
-import {
-  ModelViewer,
-  AnimationViewer,
-} from "@cow-the-great/react-markerless-ar";
+import ModelViewer from "./ModelViewer";
+import AnimationViewer from "./AnimationViewer";
 
 function App() {
   return (
