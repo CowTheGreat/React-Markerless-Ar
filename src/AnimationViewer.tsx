@@ -3,9 +3,6 @@ import { OrbitControls, useGLTF, useAnimations } from "@react-three/drei";
 import { Suspense, useRef, useEffect, useState } from "react";
 import * as THREE from "three";
 
-// Add this line to reset cache when loading the same model multiple times
-useGLTF.preload = () => {};
-
 function CameraBackground({ planeSize = 20 }) {
   const meshRef = useRef<THREE.Mesh>(null);
   const { camera } = useThree();
@@ -30,8 +27,7 @@ function CameraBackground({ planeSize = 20 }) {
       setVideoTexture(texture);
     });
     return () => {
-      const stream = video.srcObject as MediaStream | null;
-      stream?.getTracks().forEach((track) => track.stop());
+      video.srcObject?.getTracks().forEach((track: any) => track.stop());
     };
   }, []);
 
@@ -57,54 +53,26 @@ type AnimatedModelProps = {
   modelPath: string;
   scale?: number;
   position?: [number, number, number];
-  uniqueId?: string;
 };
 
 function AnimatedModel({
   modelPath,
   scale = 1.5,
   position = [0, -1, 1],
-  uniqueId,
 }: AnimatedModelProps) {
   const group = useRef<THREE.Group>(null);
-
-  // Add a unique key to the model path to ensure different instances
-  const uniqueModelPath = `${modelPath}${uniqueId ? `_${uniqueId}` : ""}`;
-  const { scene, animations } = useGLTF(modelPath, true);
+  const { scene, animations } = useGLTF(modelPath);
   const { actions } = useAnimations(animations, group);
 
   useEffect(() => {
     if (actions && animations.length > 0) {
-      const firstAnimation = Object.keys(actions)[0];
-      if (firstAnimation && actions[firstAnimation]) {
-        actions[firstAnimation]?.reset().fadeIn(0.5).play();
-      }
+      const firstAnimation = animations[0].name;
+      actions[firstAnimation]?.reset().fadeIn(0.5).play();
     }
-
-    // Cleanup function to release resources
-    return () => {
-      if (group.current) {
-        group.current.traverse((child) => {
-          if (child instanceof THREE.Mesh) {
-            if (child.geometry) child.geometry.dispose();
-            if (child.material) {
-              if (Array.isArray(child.material)) {
-                child.material.forEach((material) => material.dispose());
-              } else {
-                child.material.dispose();
-              }
-            }
-          }
-        });
-      }
-    };
   }, [actions, animations]);
 
-  // Clone the scene to ensure each instance is independent
   return (
-    <group ref={group} scale={scale} position={position}>
-      <primitive object={scene.clone()} />
-    </group>
+    <primitive ref={group} object={scene} scale={scale} position={position} />
   );
 }
 
@@ -137,23 +105,15 @@ type ModelViewerProps = {
     enableCamera?: boolean;
     planeSize?: number;
   };
-  id?: string; // Add unique ID for each viewer
 };
 
-// Generate a unique ID for each ModelViewer instance
-const generateUniqueId = (() => {
-  let counter = 0;
-  return () => `model_viewer_${counter++}`;
-})();
-
-export default function ModelViewer({
+export default function AnimationViewer({
   modelPath,
   cameraProps = {},
   lightingProps = {},
   modelProps = {},
   controlsProps = {},
   backgroundProps = {},
-  id = generateUniqueId(),
 }: ModelViewerProps) {
   const {
     position: cameraPosition = [0, 1.5, 5],
@@ -182,7 +142,7 @@ export default function ModelViewer({
   const { enableCamera = true, planeSize = 20 } = backgroundProps;
 
   return (
-    <div style={{ width: "100%", height: "400px", margin: "20px 0" }}>
+    <div>
       <Canvas
         camera={{
           position: cameraPosition,
@@ -202,7 +162,6 @@ export default function ModelViewer({
             modelPath={modelPath}
             scale={scale}
             position={position}
-            uniqueId={id}
           />
         </Suspense>
         <OrbitControls
