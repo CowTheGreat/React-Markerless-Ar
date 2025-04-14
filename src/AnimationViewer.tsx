@@ -79,6 +79,8 @@ function AnimatedModel({
 
 type ModelViewerProps = {
   modelPath: string;
+  width?: string | number;
+  height?: string | number;
   cameraProps?: {
     position?: [number, number, number];
     fov?: number;
@@ -110,6 +112,8 @@ type ModelViewerProps = {
 
 export default function AnimationViewer({
   modelPath,
+  width = "100%",
+  height = "400px",
   cameraProps = {},
   lightingProps = {},
   modelProps = {},
@@ -142,8 +146,14 @@ export default function AnimationViewer({
 
   const { enableCamera = true, planeSize = 20 } = backgroundProps;
 
+  const containerStyle = {
+    width: width,
+    height: height,
+    position: "relative" as const,
+  };
+
   return (
-    <div>
+    <div style={containerStyle}>
       <Canvas
         camera={{
           position: cameraPosition,
