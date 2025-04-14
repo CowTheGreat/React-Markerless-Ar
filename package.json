@@ -1,11 +1,24 @@
 {
   "name": "ar-trainer-ar-viewer",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "1.0.0",
+  "description": "A React component library with 3D model viewer and 3D animated model Viewer using react-three-fiber",
+  "author": "C Aravindhan",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc",
     "lint": "eslint .",
     "preview": "vite preview"
   },
