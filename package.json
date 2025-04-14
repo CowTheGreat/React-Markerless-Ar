@@ -1,6 +1,6 @@
 {
   "name": "@cow-the-great/react-markerless-ar",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A React component library for building markerless AR experiences with 3D models rendered over a live camera feed using Three.js and React Three Fiber.",
   "author": "C Aravindhan",
   "license": "MIT",
