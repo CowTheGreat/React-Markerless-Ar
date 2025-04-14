@@ -19,6 +19,23 @@
     }
   },
   "readme": "README.npm.md",
+  "keywords": [
+    "react",
+    "threejs",
+    "react-three-fiber",
+    "augmented-reality",
+    "markerless-ar",
+    "web-ar",
+    "ar",
+    "3d-models",
+    "camera-feed",
+    "animation",
+    "model-viewer",
+    "animation-viewer",
+    "glb",
+    "gltf",
+    "cow-the-great"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc",

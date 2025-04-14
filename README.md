@@ -24,17 +24,17 @@ The `ModelViewer` component is used to render static 3D models.
 
 #### Props
 
-| Prop Name         | Type     | Default Value  | Description                                                      |
-| ----------------- | -------- | -------------- | ---------------------------------------------------------------- | ------------------------------- |
-| `modelPath`       | `string` | **Required**   | Path to the 3D model file (e.g., `.glb` or `.gltf`).             |
-| `width`           | `string  | number`        | `"100%"`                                                         | Width of the viewer container.  |
-| `height`          | `string  | number`        | `"400px"`                                                        | Height of the viewer container. |
-| `cameraProps`     | `object` | `{}`           | Camera configuration (position, fov, near, far).                 |
-| `lightingProps`   | `object` | `{}`           | Lighting configuration (ambient and directional light settings). |
-| `modelProps`      | `object` | `{}`           | Model configuration (scale and position).                        |
-| `controlsProps`   | `object` | `{}`           | OrbitControls configuration (zoom, pan, rotate, etc.).           |
-| `backgroundProps` | `object` | `{}`           | Background configuration (camera feed, plane size, etc.).        |
-| `id`              | `string` | Auto-generated | Unique identifier for the viewer instance.                       |
+| Prop Name         | Type               | Default Value  | Description                                                      |
+| ----------------- | ------------------ | -------------- | ---------------------------------------------------------------- |
+| `modelPath`       | `string`           | **Required**   | Path to the 3D model file (e.g., `.glb` or `.gltf`).             |
+| `width`           | `string \| number` | `"100%"`       | Width of the viewer container.                                   |
+| `height`          | `string \| number` | `"400px"`      | Height of the viewer container.                                  |
+| `cameraProps`     | `object`           | `{}`           | Camera configuration (position, fov, near, far).                 |
+| `lightingProps`   | `object`           | `{}`           | Lighting configuration (ambient and directional light settings). |
+| `modelProps`      | `object`           | `{}`           | Model configuration (scale and position).                        |
+| `controlsProps`   | `object`           | `{}`           | OrbitControls configuration (zoom, pan, rotate, etc.).           |
+| `backgroundProps` | `object`           | `{}`           | Background configuration (camera feed, plane size, etc.).        |
+| `id`              | `string`           | Auto-generated | Unique identifier for the viewer instance.                       |
 
 ---
 
@@ -44,16 +44,16 @@ The `AnimationViewer` component is used to render animated 3D models.
 
 #### Props
 
-| Prop Name         | Type     | Default Value | Description                                                      |
-| ----------------- | -------- | ------------- | ---------------------------------------------------------------- | ------------------------------- |
-| `modelPath`       | `string` | **Required**  | Path to the animated 3D model file (e.g., `.glb` or `.gltf`).    |
-| `width`           | `string  | number`       | `"100%"`                                                         | Width of the viewer container.  |
-| `height`          | `string  | number`       | `"400px"`                                                        | Height of the viewer container. |
-| `cameraProps`     | `object` | `{}`          | Camera configuration (position, fov, near, far).                 |
-| `lightingProps`   | `object` | `{}`          | Lighting configuration (ambient and directional light settings). |
-| `modelProps`      | `object` | `{}`          | Model configuration (scale and position).                        |
-| `controlsProps`   | `object` | `{}`          | OrbitControls configuration (zoom, pan, rotate, etc.).           |
-| `backgroundProps` | `object` | `{}`          | Background configuration (camera feed, plane size, etc.).        |
+| Prop Name         | Type               | Default Value | Description                                                      |
+| ----------------- | ------------------ | ------------- | ---------------------------------------------------------------- |
+| `modelPath`       | `string`           | **Required**  | Path to the animated 3D model file (e.g., `.glb` or `.gltf`).    |
+| `width`           | `string \| number` | `"100%"`      | Width of the viewer container.                                   |
+| `height`          | `string \| number` | `"400px"`     | Height of the viewer container.                                  |
+| `cameraProps`     | `object`           | `{}`          | Camera configuration (position, fov, near, far).                 |
+| `lightingProps`   | `object`           | `{}`          | Lighting configuration (ambient and directional light settings). |
+| `modelProps`      | `object`           | `{}`          | Model configuration (scale and position).                        |
+| `controlsProps`   | `object`           | `{}`          | OrbitControls configuration (zoom, pan, rotate, etc.).           |
+| `backgroundProps` | `object`           | `{}`          | Background configuration (camera feed, plane size, etc.).        |
 
 ---
 
