@@ -24,7 +24,7 @@
     "build": "tsc",
     "lint": "eslint .",
     "preview": "vite preview",
-    "prepublishOnly": "cp README.npm.md README.md",
+    "prepublishOnly": "copy README.npm.md README.md",
     "postpublish": "git checkout README.md"
   },
   "peerDependencies": {
