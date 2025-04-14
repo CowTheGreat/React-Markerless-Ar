@@ -1,14 +1,18 @@
 import "./App.css";
-import ModelViewer from "./ModelViewer";
-import AnimationViewer from "./AnimationViewer";
+// import ModelViewer from "./ModelViewer";
+// import AnimationViewer from "./AnimationViewer";
+import {
+  ModelViewer,
+  AnimationViewer,
+} from "@cow-the-great/react-markerless-ar";
 
 function App() {
   return (
     <>
       <AnimationViewer
         modelPath="12_animated_butterflies.glb"
-        width="100%"
-        height="500px"
+        width="100vw"
+        height="100vh"
         cameraProps={{
           position: [0, 2, 5],
           fov: 60,
