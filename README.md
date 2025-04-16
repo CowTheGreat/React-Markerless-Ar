@@ -1,6 +1,6 @@
 # React-Markerless-Ar
 
-AR Trainer AR Viewer is a React-based library for rendering 3D models in a markerless augmented reality environment. It provides two main components: `ModelViewer` and `AnimationViewer`, which allow you to display static and animated 3D models, respectively.
+React-Markerless-Ar is a React-based library for rendering 3D models in a markerless augmented reality environment. It provides two main components: `ModelViewer` and `AnimationViewer`, which allow you to display static and animated 3D models, respectively.
 
 This library was created by **CowTheGreat** and is now open source, allowing the community to contribute and improve it.
 
