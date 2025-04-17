@@ -7,11 +7,13 @@ import ModelViewer from "./ModelViewer";
 import AnimationViewer from "./AnimationViewer";
 import SurfaceAwareViewer from "./SurfaceAwareViewer";
 import InteractiveAR from "./InteractiveAR";
+import Display from "./Display";
 
 function App() {
   return (
     <>
-      <InteractiveAR
+      <Display />
+      {/* <InteractiveAR
         modelPath="labrador_dog.glb"
         width="1000px"
         height="600px"
@@ -34,7 +36,7 @@ function App() {
           zoomSpeed: 2,
           maxDistance: 20,
         }}
-      />
+      /> */}
       {/* <AnimationViewer
         modelPath="labrador_dog.glb"
         width="500px"
