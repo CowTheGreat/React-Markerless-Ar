@@ -80,7 +80,7 @@ const components = [
           directionalLightPosition: [5, 5, 5],
         }}
         modelProps={{
-          scale: 2,
+          scale: 0.5,
           position: [0, 0, 0],
         }}
         backgroundProps={{
@@ -119,7 +119,7 @@ const components = [
     name: "Surface Aware Viewer",
     component: (
       <SurfaceAwareViewer
-        modelPath="cat_dispenser.glb"
+        modelPath="labrador_dog.glb"
         width="100%"
         height="400px"
         cameraProps={{
@@ -131,7 +131,7 @@ const components = [
           directionalLightPosition: [2, 2, 2],
         }}
         modelProps={{
-          scale: 1.5,
+          scale: 0.5,
           position: [0, -1, 1],
         }}
         controlsProps={{
@@ -190,7 +190,7 @@ const components = [
           directionalIntensity: 1.2,
         }}
         modelProps={{
-          initialScale: [1, 1, 1],
+          initialScale: [0.2, 0.2, 0.2],
           animationSettings: {
             fadeInDuration: 1,
             animationIndex: 1,
