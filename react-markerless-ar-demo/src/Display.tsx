@@ -248,6 +248,9 @@ const aboutPage = {
         AR experiences more accessible and customizable for developers.
       </p>
       <h2>📦 About the Package – react-markerless-ar</h2>
+      <a href="https://www.npmjs.com/package/@cow-the-great/react-markerless-ar?activeTab=code">
+        NPM Page
+      </a>
       <p>
         react-markerless-ar is a fully customizable React component library for
         building markerless Augmented Reality (AR) experiences using{" "}
