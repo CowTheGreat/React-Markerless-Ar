@@ -11,7 +11,7 @@ const components = [
     name: "Model Viewer",
     component: (
       <ModelViewer
-        modelPath="../../cat_dispenser.glb"
+        modelPath="cat_dispenser.glb"
         width="100%"
         height="400px"
         cameraProps={{
