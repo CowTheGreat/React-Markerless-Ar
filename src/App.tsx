@@ -11,7 +11,30 @@ import InteractiveAR from "./InteractiveAR";
 function App() {
   return (
     <>
-      <InteractiveAR modelPath="kento_push_up.glb" />
+      <InteractiveAR
+        modelPath="kento_push_up.glb"
+        width="1000px"
+        height="600px"
+        cameraProps={{
+          position: [0, 2, -8],
+          fov: 60,
+        }}
+        lightingProps={{
+          ambientIntensity: 0.9,
+          directionalIntensity: 1.2,
+        }}
+        modelProps={{
+          initialScale: [1, 1, 1],
+          animationSettings: {
+            fadeInDuration: 1,
+            animationIndex: 1,
+          },
+        }}
+        controlsProps={{
+          zoomSpeed: 2,
+          maxDistance: 20,
+        }}
+      />
       {/* <AnimationViewer
         modelPath="labrador_dog.glb"
         width="500px"
