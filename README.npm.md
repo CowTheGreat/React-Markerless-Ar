@@ -1,4 +1,3 @@
-````markdown
 # @cow-the-great/react-markerless-ar
 
 **React Markerless AR** is a lightweight React-based component library for rendering 3D models in a markerless Augmented Reality (AR) experience using your device's camera. It supports both static and animated `.glb`/`.gltf` models.
@@ -27,7 +26,6 @@ Install via npm:
 ```bash
 npm install @cow-the-great/react-markerless-ar
 ```
-````
 
 or with yarn:
 
@@ -66,6 +64,54 @@ Renders animated 3D models with AR background.
 #### Props
 
 Same as `ModelViewer`, with animation support.
+
+---
+
+### 🔹 `SurfaceAwareAR`
+
+Renders a 3D model on a detected surface.
+
+#### Use Case
+
+Provides a realistic AR experience by aligning the model with the detected surface and rendering it with proper lighting and camera settings.
+
+#### Props
+
+| Prop Name         | Type               | Default      | Description                                    |
+| ----------------- | ------------------ | ------------ | ---------------------------------------------- |
+| `modelPath`       | `string`           | **Required** | Path to `.glb`/`.gltf` 3D model file.          |
+| `width`           | `string \| number` | `"100%"`     | Width of the canvas.                           |
+| `height`          | `string \| number` | `"400px"`    | Height of the canvas.                          |
+| `cameraProps`     | `object`           | `{}`         | Camera config: `position`, `fov`, etc.         |
+| `lightingProps`   | `object`           | `{}`         | Lighting config: ambient, directional, etc.    |
+| `modelProps`      | `object`           | `{}`         | Scale and position of model.                   |
+| `controlsProps`   | `object`           | `{}`         | OrbitControls configuration.                   |
+| `backgroundProps` | `object`           | `{}`         | AR background config: camera feed, plane size. |
+
+---
+
+### 🔹 `InteractiveAR`
+
+Allows users to place a 3D model at a specific location by clicking on the desired position.
+
+#### Use Case
+
+Useful for interactive AR experiences where users can control the placement of objects.
+
+#### Props
+
+| Prop Name         | Type               | Default      | Description                                    |
+| ----------------- | ------------------ | ------------ | ---------------------------------------------- |
+| `modelPath`       | `string`           | **Required** | Path to `.glb`/`.gltf` 3D model file.          |
+| `width`           | `string \| number` | `"1000px"`   | Width of the canvas.                           |
+| `height`          | `string \| number` | `"1000px"`   | Height of the canvas.                          |
+| `cameraProps`     | `object`           | `{}`         | Camera config: `position`, `fov`, etc.         |
+| `lightingProps`   | `object`           | `{}`         | Lighting config: ambient, directional, etc.    |
+| `controlsProps`   | `object`           | `{}`         | OrbitControls configuration.                   |
+| `backgroundProps` | `object`           | `{}`         | AR background config: camera feed, plane size. |
+| `modelProps`      | `object`           | `{}`         | Scale and animation settings of the model.     |
+| `floorProps`      | `object`           | `{}`         | Floor plane configuration (size, opacity).     |
+| `placementProps`  | `object`           | `{}`         | Placement configuration (distance, etc.).      |
 
 ---
 
@@ -141,13 +187,6 @@ MIT License © 2025 [CowTheGreat](https://github.com/cow-the-great)
 
 Feel free to open issues or reach out with suggestions and feedback.
 
-```
-
 ---
 
 Let me know if you want me to generate the full GitHub repo template too (with `LICENSE`, `tsconfig`, `.npmignore`, etc.)!
-```
-
-```
-
-```

@@ -57,6 +57,54 @@ The `AnimationViewer` component is used to render animated 3D models.
 
 ---
 
+### 3. `SurfaceAwareAR`
+
+The `SurfaceAwareAR` component is used to display a 3D model on a detected surface.
+
+#### Use Case
+
+It provides a realistic AR experience by aligning the model with the detected surface and rendering it with proper lighting and camera settings.
+
+#### Props
+
+| Prop Name         | Type               | Default Value | Description                                                      |
+| ----------------- | ------------------ | ------------- | ---------------------------------------------------------------- |
+| `modelPath`       | `string`           | **Required**  | Path to the 3D model file.                                       |
+| `width`           | `string \| number` | `"100%"`      | Width of the viewer container.                                   |
+| `height`          | `string \| number` | `"400px"`     | Height of the viewer container.                                  |
+| `cameraProps`     | `object`           | `{}`          | Camera configuration (position, fov, near, far).                 |
+| `lightingProps`   | `object`           | `{}`          | Lighting configuration (ambient and directional light settings). |
+| `modelProps`      | `object`           | `{}`          | Model configuration (scale and position).                        |
+| `controlsProps`   | `object`           | `{}`          | OrbitControls configuration (zoom, pan, rotate, etc.).           |
+| `backgroundProps` | `object`           | `{}`          | Background configuration (camera feed, plane size, etc.).        |
+
+---
+
+### 4. `InteractiveAR`
+
+The `InteractiveAR` component allows users to place a 3D model at a specific location by clicking on the desired position.
+
+#### Use Case
+
+This is useful for interactive AR experiences where users can control the placement of objects.
+
+#### Props
+
+| Prop Name         | Type               | Default Value | Description                                                      |
+| ----------------- | ------------------ | ------------- | ---------------------------------------------------------------- |
+| `modelPath`       | `string`           | **Required**  | Path to the 3D model file.                                       |
+| `width`           | `string \| number` | `"1000px"`    | Width of the viewer container.                                   |
+| `height`          | `string \| number` | `"1000px"`    | Height of the viewer container.                                  |
+| `cameraProps`     | `object`           | `{}`          | Camera configuration (position, fov, near, far).                 |
+| `lightingProps`   | `object`           | `{}`          | Lighting configuration (ambient and directional light settings). |
+| `controlsProps`   | `object`           | `{}`          | OrbitControls configuration (zoom, pan, rotate, etc.).           |
+| `backgroundProps` | `object`           | `{}`          | Background configuration (camera feed, plane size, etc.).        |
+| `modelProps`      | `object`           | `{}`          | Model configuration (scale, animation settings, etc.).           |
+| `floorProps`      | `object`           | `{}`          | Floor plane configuration (size, opacity, etc.).                 |
+| `placementProps`  | `object`           | `{}`          | Placement configuration (distance, etc.).                        |
+
+---
+
 ## Usage
 
 Here is an example of how to use the components:
