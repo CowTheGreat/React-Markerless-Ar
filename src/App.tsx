@@ -6,11 +6,13 @@ import "./App.css";
 import ModelViewer from "./ModelViewer";
 import AnimationViewer from "./AnimationViewer";
 import SurfaceAwareViewer from "./SurfaceAwareViewer";
+import InteractiveAR from "./InteractiveAR";
 
 function App() {
   return (
     <>
-      <SurfaceAwareViewer
+      <InteractiveAR modelPath="kento_push_up.glb" />
+      {/* <AnimationViewer
         modelPath="labrador_dog.glb"
         width="500px"
         height="500px"
@@ -41,13 +43,7 @@ function App() {
           enableCamera: true,
           planeSize: 30,
         }}
-      />
-
-      <SurfaceAwareViewer
-        modelPath="dog_noanim.glb"
-        width="100%"
-        height="400px"
-      />
+      /> */}
 
       {/* <ModelViewer
         // Required prop

@@ -50,15 +50,12 @@ function CameraBackground({ planeSize = 20 }) {
   );
 }
 
-function Surface({ size = 10 }) {
+function Surface({ size }: { size: number }) {
   return (
-    <>
-      <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]}>
-        <planeGeometry args={[size, size]} />
-        <shadowMaterial opacity={0.7} />
-      </mesh>
-      <gridHelper args={[size, size / 2]} />
-    </>
+    <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]}>
+      <planeGeometry args={[size, size]} />
+      <shadowMaterial opacity={0.7} />
+    </mesh>
   );
 }
 
@@ -135,8 +132,8 @@ export default function SurfaceAwareViewer({
   const {
     position: cameraPosition = [0, 1.5, 5],
     fov = 50,
-    near,
-    far,
+    near = 0.1, // Ensure near is small enough
+    far = 10000, // Increased far value for better visibility of distant objects
   } = cameraProps;
 
   const {
@@ -152,11 +149,11 @@ export default function SurfaceAwareViewer({
     zoomSpeed = 0.8,
     enablePan = false,
     enableRotate = true,
-    maxDistance,
+    maxDistance = 100, // Ensure maxDistance is large enough
     minDistance,
   } = controlsProps;
 
-  const { enableCamera = true, planeSize = 20 } = backgroundProps;
+  const { enableCamera = true, planeSize = maxDistance * 2 } = backgroundProps; // Dynamically scale planeSize
 
   const containerStyle = {
     width: width,
@@ -172,7 +169,7 @@ export default function SurfaceAwareViewer({
           position: cameraPosition,
           fov: fov,
           near: near,
-          far: far,
+          far: far, // Apply the increased far value
         }}
       >
         <ambientLight intensity={ambientLightIntensity} />
