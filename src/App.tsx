@@ -12,11 +12,11 @@ function App() {
   return (
     <>
       <InteractiveAR
-        modelPath="kento_push_up.glb"
+        modelPath="labrador_dog.glb"
         width="1000px"
         height="600px"
         cameraProps={{
-          position: [0, 2, -8],
+          position: [0, 2, 8],
           fov: 60,
         }}
         lightingProps={{
