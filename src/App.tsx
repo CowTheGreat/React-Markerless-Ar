@@ -1,14 +1,19 @@
 import "./App.css";
+// import {
+//   ModelViewer,
+//   AnimationViewer,
+// } from "@cow-the-great/react-markerless-ar";
 import ModelViewer from "./ModelViewer";
 import AnimationViewer from "./AnimationViewer";
+import SurfaceAwareViewer from "./SurfaceAwareViewer";
 
 function App() {
   return (
     <>
-      <AnimationViewer
-        modelPath="12_animated_butterflies.glb"
-        width="100vw"
-        height="100vh"
+      <SurfaceAwareViewer
+        modelPath="labrador_dog.glb"
+        width="500px"
+        height="500px"
         cameraProps={{
           position: [0, 2, 5],
           fov: 60,
@@ -29,7 +34,7 @@ function App() {
           zoomSpeed: 1,
           enablePan: true,
           enableRotate: true,
-          maxDistance: 10,
+          maxDistance: 100,
           minDistance: 2,
         }}
         backgroundProps={{
@@ -38,14 +43,18 @@ function App() {
         }}
       />
 
-      <ModelViewer modelPath="cat_dispenser.glb" width="100%" height="400px" />
+      <SurfaceAwareViewer
+        modelPath="dog_noanim.glb"
+        width="100%"
+        height="400px"
+      />
 
-      <ModelViewer
+      {/* <ModelViewer
         // Required prop
         modelPath="cat_dispenser.glb"
         // Dimension props
-        width="700px"
-        height="600px"
+        width="500px"
+        height="500px"
         // Camera configuration
         cameraProps={{
           position: [0, 2, 7],
@@ -80,7 +89,7 @@ function App() {
         }}
         // Unique identifier
         id="detailed-model-viewer"
-      />
+      /> */}
     </>
   );
 }
